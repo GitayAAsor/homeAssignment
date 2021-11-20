@@ -1,38 +1,265 @@
-.App {
-  text-align: center;
+/* Global Styles */
+:root {
+    --primary-color: #17a2b8;
+    --dark-color: #343a40;
+    --light-color: #f4f4f4;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+    list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+    width: 100%;
+}
+
+/* Utilities */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+/* Text Styles*/
+.x-large {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.large {
+    font-size: 0.6rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-dark {
+    color: var(--dark-color);
+}
+
+/* Padding */
+.p {
+    padding: 0.5rem;
+}
+.p-1 {
+    padding: 1rem;
+}
+.p-2 {
+    padding: 2rem;
+}
+.p-3 {
+    padding: 3rem;
+}
+.py {
+    padding: 0.5rem 0;
+}
+.py-1 {
+    padding: 1rem 0;
+}
+.py-2 {
+    padding: 2rem 0;
+}
+.py-3 {
+    padding: 3rem 0;
+}
+
+/* Margin */
+.m {
+    margin: 0.5rem;
+}
+.m-1 {
+    margin: 1rem;
+}
+.m-2 {
+    margin: 2rem;
+}
+.m-3 {
+    margin: 3rem;
+}
+.my {
+    margin: 0.5rem 0;
+}
+.my-1 {
+    margin: 1rem 0;
+}
+.my-2 {
+    margin: 2rem 0;
+}
+.my-3 {
+    margin: 3rem 0;
+}
+
+.btn {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 0.13rem 1.3rem;
+    font-size: 0.6rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+    outline: none;
+    display: block;
+    width: 100%;
+}
+
+.alert {
+    padding: 0.8rem;
+    opacity: 0.9;
+    background: var(--dark-color);
+}
+
+.btn-primary,
+.alert-primary {
+    background: var(--primary-color);
+}
+
+.btn-light,
+.alert-light {
+    background: var(--light-color);
+    color: #333;
+}
+
+.btn-dark,
+.alert-dark {
+    background: var(--dark-color);
+    color: #fff;
+}
+
+.btn-danger,
+.alert-danger {
+    background: var(--danger-color);
+    color: #fff;
+}
+
+.btn-success,
+.alert-success {
+    background: var(--success-color);
+    color: #fff;
+}
+
+.btn-white,
+.alert-white {
+    background: #fff;
+    color: #333;
+    border: #ccc solid 1px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.round-img {
+    border-radius: 50%;
+}
+
+.line {
+    height: 1px;
+    background: #ccc;
+    margin: 1.5rem 0;
+}
+
+/* Forms */
+.form .form-group {
+    margin: 0.8rem 0;
+
+}
+
+.form .form-text {
+    display: block;
+    margin-top: 0.3rem;
+    color: #888;
+}
+
+.form input[type='text'],
+
+.form select,
+.form textarea {
+
+    display: block;
+    width: 100%;
+    padding: 2px;
+    font-size: 0.6rem;
+    border: 1px solid #ccc;
+}
+
+.form input[type='submit'],
+button {
+    font: inherit;
+}
+
+.landing {
+    position: relative;
+    background: url('components/graphics/showcase.jpg') no-repeat center center/cover;
+    height: 100vh;
+}
+.mainPanel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 600px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #cccccc;
+}
+
+.scrollList{
+    height: 18%;
+    border-color: gray;
+    background-color: white;
+    border-width: 2px ;
+    border-style: solid;
+    margin: 6px 2px;
+    padding: 2px;
+    border-radius: 4px;
+    overflow-y: scroll;
+}
+
+.item{
+    border-color: gray;
+    border-width: 2px ;
+    border-style: solid;
+    border-radius: 4px;
+    margin: 2px;
+    padding: 1px;
+    background-color: #dddddd;
 }
